@@ -83,6 +83,9 @@ img {
 .contacts .link:focus {
   color: var(--hover-color);
 }
+.icon-open {
+  stroke: var(--secondary-color);
+}
 
 @media screen and (max-width: 767px) {
   .navigation-list,
@@ -91,9 +94,14 @@ img {
   }
 }
 .open-menu-btn {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -267,6 +275,7 @@ img {
   background: var(--hover-color);
   cursor: pointer;
 }
+
 @media screen and (min-width: 768px) {
   .hero {
     min-width: 768px;
@@ -285,14 +294,7 @@ img {
     background-position: center;
     background-size: cover;
   }
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .box {
-      background-image: url(../images/Dark-bg-tabl@2x.jpg);
-    }
-  }
+
   .hero .title {
     min-width: 496px;
     margin-left: auto;
@@ -306,6 +308,15 @@ img {
     text-transform: none;
   }
 }
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: url(../images/Dark-bg-tabl@2x.jpg);
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .hero {
     max-width: 1440px;
@@ -324,16 +335,17 @@ img {
     background-position: center;
     background-size: cover;
   }
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .box {
-      background-image: url(../images/people-office@2x.jpg);
-    }
-  }
+
   .hero .title {
     margin-bottom: 48px;
+  }
+}
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: url(../images/people-office@2x.jpg);
   }
 }
 
@@ -537,8 +549,10 @@ img {
 }
 
 /*------------ Adventages------------------ */
+
 .advantages {
-  padding-top: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 .visually-hidden {
   position: absolute;
@@ -552,37 +566,82 @@ img {
   clip-path: inset(50%);
   margin: -1px;
 }
-
-.advantages-list {
-  display: flex;
-}
-.advantages-list .item {
-  width: calc((100% - 72px) / 4);
-  margin-left: 24px;
-}
-.advantages-list > .item:first-child {
-  margin-left: 0;
-}
-.advantages .title {
+.advantages-list .title {
   margin-bottom: 8px;
-}
-.advantages .title,
-.team .subtitle {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.111;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
   color: var(--secondary-color);
 }
-.icon-advantages {
-  display: inline-flex;
-  margin-bottom: 8px;
-  width: 264px;
-  height: 112px;
-  background: #f4f4fd;
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
+.advantages-list .text {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+@media screen and (max-width: 767px) {
+  .advantages-list .item:not(last-child) {
+    margin-bottom: 72px;
+  }
+  .advantages-list .title {
+    text-align: center;
+  }
+  .advantages-list .item {
+    max-width: 396px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .icon-advantages {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .advantages-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .advantages-list .item {
+    width: calc((100% - 24px) / 2);
+    margin-bottom: 72px;
+  }
+  .advantages-list .item:nth-child(2n) {
+    margin-left: 24px;
+  }
+  .advantages-list .item:nth-child(n + 2) {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .advantages-list .item {
+    width: calc((100% - 72px) / 4);
+  }
+  .advantages-list .item:first-child {
+    margin-left: 0;
+  }
+  .advantages-list .item:not(:first-child) {
+    margin-left: 24px;
+  }
+  .icon-advantages {
+    display: inline-flex;
+    margin-bottom: 8px;
+    width: 264px;
+    height: 112px;
+    background: #f4f4fd;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+  .advantages-list .title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .advantages-list .text {
+    font-weight: 400;
+  }
 }
 
 /*---------------Work---------- */
@@ -649,6 +708,13 @@ img {
 }
 .team .item {
   background-color: var(--primary-bg-color);
+}
+.team .subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--secondary-color);
 }
 .subtitle {
   margin-bottom: 8px;
