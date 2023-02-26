@@ -580,7 +580,7 @@ img {
   letter-spacing: 0.02em;
 }
 @media screen and (max-width: 767px) {
-  .advantages-list .item:not(last-child) {
+  .advantages-list .item:not(:last-child) {
     margin-bottom: 72px;
   }
   .advantages-list .title {
@@ -615,6 +615,10 @@ img {
   }
 }
 @media screen and (min-width: 1200px) {
+  .advantages {
+    padding-top: 120px;
+    padding-bottom: 0;
+  }
   .advantages-list .item {
     width: calc((100% - 72px) / 4);
     margin-top: 0;
@@ -777,35 +781,86 @@ img {
     margin-top: 0;
   }
 }
-
-.team-list .item {
-  /* width: calc((100% - 72px) / 4); */
-  /* margin-left: 24px; */
+@media screen and (min-width: 1200px) {
+  .team {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .team-list .item {
+    width: calc((100% - 72px) / 4);
+    margin-top: 0;
+  }
+  .team-list .item:not(:first-child) {
+    margin-left: 24px;
+  }
 }
 
 /* -----------------customers --------------------------*/
 .customers {
-  padding-top: 130px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
   text-align: center;
 }
 .customers-title {
   margin-bottom: 72px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.111;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
 }
 .customers-list {
   display: flex;
 }
 .customers-list .item {
-  width: calc((100% - 120px) / 6);
-  margin-right: 24px;
+  width: calc((100% - 16px) / 2);
+  margin-top: 72px;
 }
-.customers-list .item:last-child {
-  margin-right: 0;
+.customers-list .item:nth-child(-n + 2) {
+  margin-top: 0;
+}
+@media screen and (max-width: 767px) {
+  .customers-list .item:nth-child(2n) {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .customers-list {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .customers-list .item {
+    width: calc((100% - 48px) / 3);
+    margin-left: 24px;
+  }
+  .customers-list .item:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+  .customers-list .item:nth-child(-n + 3) {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .customers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .customers-list .item {
+    width: calc((100% - 120px) / 6);
+    margin-right: 24px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .customers-list .item:last-child {
+    margin-right: 0;
+  }
 }
 
 .border-icon {
   display: flex;
-  width: 168px;
   height: 88px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
