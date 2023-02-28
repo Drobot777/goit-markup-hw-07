@@ -67,7 +67,7 @@ img {
   color: var(--secondary-bg-color);
 }
 
-/*--------- header ----------------*/
+/*----------------------------------------- HEADERS ---------------------------------------------------*/
 .header {
   border-bottom: 1px solid var(--bord-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -90,12 +90,22 @@ img {
 .icon-open {
   stroke: var(--secondary-color);
 }
+.logo {
+  display: inline-block;
+  color: var(--secondary-color);
+  text-decoration-line: none;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.166;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
 
-@media screen and (max-width: 767px) {
-  .navigation-list,
-  .contacts {
-    display: none;
-  }
+.navigation-list .activ-link {
+  position: relative;
+  color: var(--hover-color);
 }
 .open-menu-btn {
   display: inline-flex;
@@ -106,6 +116,13 @@ img {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation-list,
+  .contacts {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -135,7 +152,6 @@ img {
     letter-spacing: 0.02em;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-
   .contacts {
     display: flex;
     justify-content: center;
@@ -167,7 +183,6 @@ img {
   .navigation {
     padding: 0;
   }
-
   .contacts-list .item:not(:last-child) {
     margin-bottom: 6px;
   }
@@ -196,25 +211,7 @@ img {
   }
 }
 
-.logo {
-  display: inline-block;
-  color: var(--secondary-color);
-  text-decoration-line: none;
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1.166;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.navigation-list .activ-link {
-  position: relative;
-  color: var(--hover-color);
-}
-
-/* --------------Mobile menu -----------------------------------*/
+/* -----------------------------------------------MOBILE MENU -----------------------------------*/
 .mobile-menu.js-menu-container {
   position: fixed;
   top: 0;
@@ -224,11 +221,11 @@ img {
   background: #ffffff;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transform: translateY(-100%);
-  transition: transform 500ms var(--time-tranz);
+  transform: translateX(-100%);
+  transition: transform 250ms var(--time-tranz);
 }
 .mobile-menu.js-menu-container.is-open {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 .mobile-list .item:not(:last-child) {
   margin-bottom: 40px;
@@ -243,8 +240,13 @@ img {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--secondary-color);
+  transition: color 250ms var(--time-tranz);
 }
 .mobile-list .activ {
+  color: var(--hover-color);
+}
+.mobile-list .link:focus,
+.mobile-list .link:hover {
   color: var(--hover-color);
 }
 .mobile-contacts .item:not(:last-child) {
@@ -287,7 +289,7 @@ img {
   }
 }
 
-/* -------------hero--------------- */
+/* ----------------------------------------HERO---------------------------------------------------- */
 .hero {
   max-width: 428px;
   margin-left: auto;
@@ -309,8 +311,12 @@ img {
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-  .box {
-    background-image: url(../images/Dark-bg@2x.jpg);
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7) 100%
+      ),
+      url(../images/Dark-bg@2x.jpg);
   }
 }
 
@@ -389,8 +395,12 @@ img {
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-  .box {
-    background-image: url(../images/Dark-bg-tabl@2x.jpg);
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7) 100%
+      ),
+      url(../images/Dark-bg-tabl@2x.jpg);
   }
 }
 
@@ -421,12 +431,16 @@ img {
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-  .box {
-    background-image: url(../images/people-office@2x.jpg);
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7) 100%
+      ),
+      url(../images/people-office@2x.jpg);
   }
 }
 
-/* -----------Modal------------------------- */
+/* -------------------------------------------MODAL---------------------------------------- */
 
 .backdrop {
   position: fixed;
@@ -639,7 +653,7 @@ img {
   }
 }
 
-/*------------ Adventages------------------ */
+/*------------------------------------- ADVENTAGES--------------------------------------------- */
 
 .advantages {
   padding-top: 96px;
@@ -739,7 +753,7 @@ img {
   }
 }
 
-/*---------------Work---------- */
+/*-----------------------------------------WORK------------------------------------------- */
 
 .works {
   padding-top: 120px;
@@ -780,7 +794,7 @@ img {
   }
 }
 
-/* ----------------Team------------- */
+/* -----------------------------------TEAM-------------------------------------------- */
 .team {
   padding-top: 96px;
   padding-bottom: 128px;
@@ -895,7 +909,7 @@ img {
   }
 }
 
-/* -----------------customers --------------------------*/
+/* -----------------------------------CUSTOMERS--------------------- --------------------------*/
 .customers {
   padding-top: 96px;
   padding-bottom: 96px;
@@ -919,6 +933,26 @@ img {
 }
 .customers-list .item:nth-child(-n + 2) {
   margin-top: 0;
+}
+.border-icon {
+  display: flex;
+  height: 88px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  color: #8e8f99;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.border-icon:hover,
+.border-icon:focus {
+  border: 1px solid var(--hover-color);
+  color: var(--hover-color);
+}
+
+.icon-logo {
+  fill: currentColor;
 }
 @media screen and (max-width: 767px) {
   .customers-list .item:nth-child(2n) {
@@ -965,27 +999,7 @@ img {
   }
 }
 
-.border-icon {
-  display: flex;
-  height: 88px;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
-  color: #8e8f99;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.border-icon:hover,
-.border-icon:focus {
-  border: 1px solid var(--hover-color);
-  color: var(--hover-color);
-}
-
-.icon-logo {
-  fill: currentColor;
-}
-/* --------footer ----------*/
+/* ------------------------------FOOTER ------------------------------------*/
 .footer {
   padding-top: 96px;
   padding-bottom: 96px;
