@@ -25,7 +25,7 @@
           <a href="./index.html" class="logo"
             ><span class="accent">Web</span>Studio</a
           >
-          <button type="button" class="open-menu-btn">
+          <button type="button" class="open-menu-btn js-open-menu" >
             <svg class="icon-open" width="32" height="22">
               <use
                 href="./images/symbol-defs.svg#icon-charm_menu-hamburger-1"
@@ -58,8 +58,8 @@
           </ul>
         </address>
       </div>
-      <div class="mobile-menu">
-        <button class="btn-close">
+      <div class="mobile-menu js-menu-container">
+        <button class="btn-close js-close-menu">
           <svg class="icon-close" width="8" height="8">
             <use href="./images/symbol-defs.svg#icon-close-black"></use>
           </svg>
@@ -79,7 +79,7 @@
         <address class="mobile-contacts">
           <ul class="mobile-contacts-list list">
             <li class="item">
-              <a href="tel:+110001111111" class="link"
+              <a href="tel:+110001111111" class=" activ link"
                 >+11 (000) 111-11-11</a
               >
             </li>
@@ -268,13 +268,15 @@
           <h2 class="works-title">What are we doing</h2>
           <ul class="works-list list">
             <li class="item">
-              <img src="./images/img1.jpg" alt="Computer" width="360" />
+              <img srcset="./images/img1.jpg 1x, ./images/Rectangle1@2x.jpg 2x"
+               src="./images/img1.jpg" alt="Computer" width="360" />
             </li>
             <li class="item">
-              <img src="./images/img2.jpg" alt="Smartphones" width="360" />
+              <img srcset="./images/img2.jpg 1x, ./images/Rectangle2@2x.jpg 2x"
+               src="./images/img2.jpg" alt="Smartphones" width="360" />
             </li>
             <li class="item">
-              <img
+              <img srcset="./images/img3.jpg 1x, ./images/Rectangle3@2x.jpg 2x"
                 src="./images/img3.jpg"
                 alt="Smartphone and Laptop"
                 width="360"
@@ -287,7 +289,7 @@
       <section class="team">
         <div class="team-container container">
           <h2 class="title">Our Team</h2>
-          <ul class="team-list list">
+          <div class="team-cont">          <ul class="team-list list">
             <li class="item">
               <img
                 srcset="./images/frame1.jpg 1x, ./images/img1@2x.jpg 2x"
@@ -343,7 +345,7 @@
                 srcset="./images/frame2.jpg 1x, ./images/img2@2x.jpg 2x"
                 src="./images/frame2.jpg"
                 alt="man's photo"
-                width="264"
+              width="264"
               />
               <div class="content-wrapper">
                 <h3 class="subtitle">Tom Ford</h3>
@@ -488,7 +490,8 @@
                 </ul>
               </div>
             </li>
-          </ul>
+          </ul></div>
+
         </div>
       </section>
       <section class="customers">
@@ -619,6 +622,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobil.js"></script>
 
     <script src="./js/modal.js"></script>
   </body>
